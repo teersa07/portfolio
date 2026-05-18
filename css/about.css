@@ -96,6 +96,11 @@
     color: #3d2f56;
 }
 
+/* Add small vertical spacing between consecutive paragraphs inside window bodies */
+.window-body p + p {
+    margin-top: 10px;
+}
+
 /* 2-COLUMN GRID FOR SUB WINDOWS */
 .about-grid {
     display: grid;
