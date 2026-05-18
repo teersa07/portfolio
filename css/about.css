@@ -1,0 +1,171 @@
+/* ABOUT PAGE WRAPPER */
+.about-section {
+    position: relative;
+    padding: 60px 30px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* CLOUDS */
+.about-cloud1 { top: 100px; left: 10%; }
+.about-cloud2 { top: 300px; right: 10%; }
+
+/* THE LARGE MAIN CONTAINER (Borders and background removed completely) */
+.main-window {
+    width: 100%;
+    max-width: 950px;
+    background: transparent; /* Allows your orange/peach gradient to shine through completely */
+    border: none;             /* Outer border gone */
+    box-shadow: none;         /* Outer box-shadow gone */
+    animation: slideDown 1s ease;
+}
+
+/* THE CONTAINER HEADER (Only keeping this if you want the very top main header bar floating) */
+.main-window > .window-header {
+    background: #7aa35a;      /* Retro green */
+    border: 4px solid #3d2f56;
+    border-radius: 0px;       /* Pixelated/Sharp corners */
+    box-shadow: 4px 4px 0px #3d2f56;
+    margin-bottom: 30px;
+}
+.main-window > .window-header .header-title {
+    color: #ffffff;           /* Crisp white title for the main header */
+}
+
+/* CONTENT CONTAINER INSIDE MAIN WINDOW */
+.window-content {
+    padding: 0px;             /* Removed padding to let columns align freely */
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* SUB WINDOWS (The text cards) */
+.sub-window {
+    background: #fff0cf;      /* Match the light beige from your work cards */
+    border: 4px solid #3d2f56;
+    border-radius: 0px;       /* Sharp, pixelated corners */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 0px #3d2f56; /* Solid retro block shadow */
+    animation: floatUp 1s ease;
+}
+
+/* GREEN WINDOW HEADER (Matching your work theme label styles) */
+.window-header.small {
+    background: #7aa35a;      /* Green headers */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 4px solid #3d2f56;
+    border-radius: 0px;       /* Sharp corners */
+}
+
+.header-title {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;           /* White text on green background for readability */
+    letter-spacing: 1px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: 3px solid #3d2f56;
+    border-radius: 0px;       /* Squared off dots to match the pixel look */
+    background: #ffffff;
+}
+
+/* WRITTEN TEXT BOX BODY */
+.window-body {
+    background: #fff0cf;      /* Warm beige inside background to keep consistent */
+    padding: 20px;
+}
+
+.window-body p, .window-body li {
+    font-size: 9px;
+    line-height: 2;
+    color: #3d2f56;
+}
+
+/* 2-COLUMN GRID FOR SUB WINDOWS */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+/* INTEREST TAGS (Matching the pink labels on your Work page) */
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.interest-tags span {
+    font-size: 8px;
+    background: #ff7f6e;      /* Pinkish coral color from your 'Arduino' / 'HTML' labels */
+    padding: 8px 12px;
+    border: 3px solid #3d2f56;
+    border-radius: 0px;       /* Sharp pixel corners */
+    color: #3d2f56;
+    box-shadow: 3px 3px 0px #3d2f56;
+}
+
+/* GROWTH LIST */
+.growth-list {
+    list-style: none;
+    padding: 0;
+}
+
+.growth-list li {
+    margin-bottom: 12px;
+}
+
+/* ANIMATIONS */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE (Stack columns perfectly on mobile screens) */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* HOVER EFFECTS FOR ABOUT SUB-WINDOWS */
+.sub-window {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sub-window:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 9px 9px 0px #3d2f56; 
+}
+
+/* Let's make the interest tags pop out when hovered too! */
+.interest-tags span {
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.interest-tags span:hover {
+    transform: scale(1.1);
+    background-color: #ff9f91; /* Brightens the coral slightly */
+    cursor: pointer;
+}

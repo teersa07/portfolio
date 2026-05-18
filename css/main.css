@@ -1,0 +1,518 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+/* FLOATING STARS (global) */
+
+.floating-stars{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:999;
+}
+
+.star{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:22px;
+
+    text-shadow:0 0 10px white;
+
+    animation:floatStar 5s infinite ease-in-out;
+}
+
+.star1{
+    top:10%;
+    left:15%;
+}
+
+.star2{
+    top:25%;
+    right:12%;
+
+    animation-delay:1s;
+}
+
+.star3{
+    bottom:20%;
+    left:20%;
+
+    animation-delay:2s;
+}
+
+.star4{
+    bottom:12%;
+    right:18%;
+
+    animation-delay:3s;
+}
+
+@keyframes floatStar{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+}
+}
+
+body{
+    background:linear-gradient(to bottom,#ffc7b7,#ffeaa7);
+
+    font-family:'Press Start 2P', cursive;
+
+    color:#3d2f56;
+
+    min-height:100vh;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 50px;
+}
+
+/* LOGO */
+
+.logo{
+    font-size:20px;
+
+    color:#7aa35a;
+
+    animation:glowBounce 2s infinite;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+
+    gap:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+
+    color:white;
+
+    background:#7aa35a;
+
+    padding:15px 20px;
+
+    border:4px solid #4d5b3d;
+
+    box-shadow:4px 4px 0px #2d2d2d;
+
+    transition:0.3s;
+}
+
+/* HOVER ANIMATION */
+
+.nav-links a:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+    box-shadow:8px 8px 0px #2d2d2d;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+}
+
+.hero-card{
+    background:#fff0cf;
+
+    width:500px;
+
+    padding:40px;
+
+    border:6px solid #3d2f56;
+
+    box-shadow:8px 8px 0px #3d2f56;
+
+    text-align:center;
+
+    animation:slideIn 1.5s ease;
+}
+
+/* IMAGE */
+
+.image-box{
+    width:220px;
+
+    height:220px;
+
+    margin:0 auto 30px auto;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    border:6px solid #3d2f56;
+}
+
+.image-box img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+/* TEXT */
+
+.hero-card h1{
+    margin-bottom:25px;
+}
+
+.hero-card p{
+    font-size:12px;
+
+    line-height:2;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+.main-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;          /* Changed to white to match the arrow button text */
+    
+    background: #b39ddb;   /* Changed from red to pastel violet */
+    
+    padding: 15px 25px;
+    border: 4px solid #3d2f56;
+    box-shadow: 4px 4px 0px #3d2f56;
+    transition: 0.3s;
+}
+
+.main-btn:hover{
+    transform: translateY(-8px);
+    box-shadow: 8px 8px 0px #3d2f56;
+    
+    background: #c5a3ff;   /* Matches the arrow's lighter hover violet */
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:50px;
+
+    font-size:10px;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideIn{
+
+    from{
+        opacity:0;
+
+        transform:translateX(-200px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:translateX(0);
+    }
+}
+
+@keyframes glowBounce{
+
+    0%{
+        transform:translateY(0);
+
+        text-shadow:0 0 5px #7aa35a;
+    }
+
+    50%{
+        transform:translateY(-8px);
+
+        text-shadow:0 0 20px #7aa35a;
+    }
+
+    100%{
+        transform:translateY(0);
+
+        text-shadow:0 0 5px #7aa35a;
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:25px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .hero-card{
+        width:95%;
+    }
+
+    .image-box{
+        width:180px;
+
+        height:180px;
+    }
+}
+
+/* HOME LAYOUT CONTAINER */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* SHRINKING THE HERO CARD */
+.hero-card {
+    background: #fff0cf;
+    width: 380px; /* Shrunk from 500px */
+    padding: 25px; /* Compact padding */
+    border: 6px solid #3d2f56;
+    box-shadow: 8px 8px 0px #3d2f56;
+    text-align: center;
+    animation: slideIn 1.5s ease;
+}
+
+/* Adjust image box inside downsized card */
+.hero-card .image-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+}
+
+.hero-card h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero-card p {
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+/* THE NEW SUB-BOXES GRID */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* RETRO WINDOW BOXES */
+.home-box {
+    background: #fff0cf;
+    border: 4px solid #3d2f56;
+    box-shadow: 6px 6px 0px #3d2f56;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.home-box .box-header {
+    background: #7aa35a;
+    color: white;
+    font-size: 8px;
+    padding: 8px 12px;
+    border-bottom: 4px solid #3d2f56;
+    letter-spacing: 1px;
+}
+
+.home-box .box-body {
+    padding: 15px;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+/* MOBILE FIX FOR HOME GRID */
+@media(max-width:768px){
+    .hero-card {
+        width: 90%;
+    }
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* HOVER EFFECTS FOR HOME WINDOWS */
+.home-box {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-box:hover {
+    transform: translate(-4px, -4px); /* Moves box slightly up and left */
+    box-shadow: 10px 10px 0px #3d2f56; /* Makes the shadow look deeper */
+}
+
+/* POSITIONING THE HOMEPAGE BACKGROUND CLOUDS */
+.hero {
+    position: relative; /* Essential so clouds stay trapped inside the hero section */
+    overflow: hidden;
+}
+
+.home-cloud1 {
+    position: absolute;
+    top: 80px;
+    left: 8%;
+    z-index: 1; /* Puts them in the background layer */
+}
+
+.home-cloud2 {
+    position: absolute;
+    bottom: 120px;
+    right: 5%;
+    z-index: 1;
+}
+
+.home-container {
+    position: relative;
+    z-index: 2; /* Keeps your text boxes layered safely on top of clouds */
+}
+
+/* GLOBAL PIXEL CLOUD STYLE */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    width: 120px;
+    height: 40px;
+    box-shadow: 
+        0 8px 0 #ffffff,   /* Layering blocks to make a retro shape */
+        -16px 8px 0 #ffffff, 
+        16px 8px 0 #ffffff,
+        -24px 16px 0 #ffffff, 
+        24px 16px 0 #ffffff,
+        0 -8px 0 #ffffff;
+    opacity: 0.7;
+    z-index: 1;
+    animation: drift 20s linear infinite;
+}
+
+/* Slowly moves clouds left and right */
+@keyframes drift {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0px); }
+}
+
+/* HOMEPAGE SPECIFIC CLOUD PLACEMENT */
+.hero {
+    position: relative; /* This pins the clouds inside the screen area */
+    overflow: hidden;
+}
+
+.home-cloud1 {
+    top: 15%;
+    left: 10%;
+}
+
+.home-cloud2 {
+    bottom: 25%;
+    right: 12%;
+    transform: scale(0.8); /* Makes this one slightly smaller for depth */
+}
+
+/* GLOBAL PAGE TRANSITION ANIMATION */
+body {
+    /* Triggers the fade-and-slide animation as soon as the page loads */
+    animation: pageFadeIn 0.6s ease-out forwards;
+}
+
+/* THE ANIMATION TIMELINE */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Starts slightly lower down */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Settles perfectly into position */
+    }
+}
+
+/* BOTTOM NAVIGATION ARROWS CONTAINER */
+.next-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 20px auto;
+    width: 105%;
+}
+
+/* THE PIXEL ARROW LINK */
+.pixel-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    
+    font-size: 11px;       /* Made slightly bigger from 10px */
+    padding: 18px 32px;    /* Made bigger from 15px 25px */
+    
+    color: #ffffff;
+    background: #b39ddb;   /* Pastel violet */
+    border: 4px solid #3d2f56;
+    box-shadow: 6px 6px 0px #3d2f56;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* INTERACTIVE HOVER EFFECTS */
+.pixel-arrow:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #3d2f56;
+    background: #c5a3ff;   /* Lighter violet glow on hover */
+}
